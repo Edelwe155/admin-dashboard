@@ -1,21 +1,22 @@
 import { fetchSingleProduct } from "@/app/utils/data";
 import styles from "./productInfo.module.css";
 import Image from "next/image";
+import { updateProduct } from "@/app/utils/actions";
 
 const ProductPage = async ({ params }) => {
   const { id } = params;
   const product = await fetchSingleProduct(id);
-  console.log(product);
 
   return (
     <div className={styles.container}>
-      <form accessKey="" className={styles.form}>
+      <form action={updateProduct} accessKey="" className={styles.form}>
+        <input type="hidden" name="id" value={product.id} />
         <div className={styles.general}>
           <div className={styles.innerContainer}>
             <div className={styles.productInfo}>
               <Image
                 className={styles.image}
-                src="/noavatar.png"
+                src={product.image || "/noproduct.jpg"}
                 alt="productImage"
                 width={120}
                 height={120}
@@ -25,6 +26,7 @@ const ProductPage = async ({ params }) => {
                 <span>Stock: {product.stock}</span>
                 <span>Price: ${product.price}</span>
                 <span>Category: {product.category}</span>
+                <span>Dimensions: {product.size}</span>
               </div>
             </div>
           </div>
@@ -41,9 +43,9 @@ const ProductPage = async ({ params }) => {
             <input type="text" placeholder="Set new price" name="price" />
             <input type="text" placeholder="Set new color" name="color" />
             <input type="text" placeholder="Set new size" name="size" />
-            <select name="category" id="category">
+            <select name="category" defaultValue={product.category}>
               <option value="default">Select category</option>
-              <option value="kitche">Kitchen</option>
+              <option value="kitchen">Kitchen</option>
               <option value="office">Office</option>
               <option value="phones">Phones</option>
               <option value="computers">Computers</option>

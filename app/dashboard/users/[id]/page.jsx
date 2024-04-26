@@ -1,6 +1,7 @@
 import { fetchSingleUser } from "@/app/utils/data";
 import styles from "./userInfo.module.css";
 import Image from "next/image";
+import { updateUser } from "@/app/utils/actions";
 
 const UserPage = async ({ params }) => {
   const { id } = params;
@@ -8,7 +9,8 @@ const UserPage = async ({ params }) => {
 
   return (
     <div className={styles.container}>
-      <form accessKey="" className={styles.form}>
+      <form action={updateUser} accessKey="" className={styles.form}>
+        <input type="hidden" name="id" value={user.id} />
         <div className={styles.general}>
           <div className={styles.innerContainer}>
             <div className={styles.userInfo}>
@@ -36,12 +38,20 @@ const UserPage = async ({ params }) => {
               name="image"
             />
             <input type="text" placeholder="Set new username" name="username" />
-            <select value={user.role}>
+            <select name="role">
               <option value="default">Select Role</option>
-              <option value="admin">Admin</option>
-              <option value="editor">Editor</option>
-              <option value="client">Client</option>
-              <option value="guest">Guest</option>
+              <option value="admin" selected={user.role === "admin"}>
+                Admin
+              </option>
+              <option value="editor" selected={user.role === "editor"}>
+                Editor
+              </option>
+              <option value="client" selected={user.role === "client"}>
+                Client
+              </option>
+              <option value="guest" selected={user.role === "guest"}>
+                Guest
+              </option>
             </select>
             <button className={styles.button}>Save Changes</button>
           </div>
@@ -89,7 +99,7 @@ const UserPage = async ({ params }) => {
               name="desc"
               id="desc"
               placeholder={
-                user.nonessentials.about || "Tell us about  yourself..."
+                user.nonessentials.about || "Tell us about yourself..."
               }
               rows="14"
               disabled
