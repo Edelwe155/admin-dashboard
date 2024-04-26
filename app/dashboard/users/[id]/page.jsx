@@ -38,20 +38,12 @@ const UserPage = async ({ params }) => {
               name="image"
             />
             <input type="text" placeholder="Set new username" name="username" />
-            <select name="role">
+            <select name="role" defaultValue={user.role}>
               <option value="default">Select Role</option>
-              <option value="admin" selected={user.role === "admin"}>
-                Admin
-              </option>
-              <option value="editor" selected={user.role === "editor"}>
-                Editor
-              </option>
-              <option value="client" selected={user.role === "client"}>
-                Client
-              </option>
-              <option value="guest" selected={user.role === "guest"}>
-                Guest
-              </option>
+              <option value="admin">Admin</option>
+              <option value="editor">Editor</option>
+              <option value="client">Client</option>
+              <option value="guest">Guest</option>
             </select>
             <button className={styles.button}>Save Changes</button>
           </div>
