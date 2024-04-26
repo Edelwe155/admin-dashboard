@@ -1,0 +1,74 @@
+.container {
+  background-color: var(--bgSoft);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.imageContainer {
+  background-color: var(--bg);
+  border: 2px solid #2e374a;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns {
+  display: flex;
+}
+
+.mainData {
+  flex-grow: 1;
+}
+
+.secondaryData {
+  flex-grow: 10;
+}
+
+.mainData,
+.secondaryData {
+  padding: 20px;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 20px;
+}
+
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 2px solid #2e374a;
+  border-radius: 10px;
+}
+
+.form .imageInput {
+  background-color: transparent;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 10px;
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+  background-color: #808000;
+}

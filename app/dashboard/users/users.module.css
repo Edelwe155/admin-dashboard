@@ -1,0 +1,66 @@
+.container {
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addButton {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+  background-color: #808000;
+}
+
+.addButton:hover {
+  background-color: #b0b005;
+}
+
+.table {
+  width: 100%;
+  border-top: 3px solid var(--bg);
+  margin-top: 15px;
+}
+
+.table td {
+  padding: 10px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+}
+
+.view {
+  background-color: #08b043;
+}
+
+.delete {
+  background-color: #7b0414;
+}

@@ -1,0 +1,77 @@
+.container {
+  margin-top: 20px;
+  display: flex;
+}
+
+.innerContainer {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: var(--bgSoft);
+}
+
+.productInfo {
+  display: flex;
+  gap: 20px;
+}
+
+.productText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+}
+
+.general {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.secondary {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.dataRow {
+  display: flex;
+  gap: 20px;
+}
+
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 2px solid #2e374a;
+  border-radius: 10px;
+}
+
+.form input:disabled,
+.form textarea:disabled,
+.form select:disabled {
+  cursor: not-allowed;
+}
+
+.button {
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+  background-color: #808000;
+}
+
+.attention {
+  background-color: #7b0414;
+}

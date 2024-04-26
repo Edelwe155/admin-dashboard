@@ -1,0 +1,20 @@
+.container {
+  padding: 15px 10px 0px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.button:first-child {
+  margin-right: auto;
+}
+.button:last-child {
+  margin-left: auto;
+}
+.button:disabled {
+  display: none;
+}

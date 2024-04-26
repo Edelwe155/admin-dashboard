@@ -1,0 +1,46 @@
+.container {
+  position: fixed;
+}
+
+.headerItem {
+  display: flex;
+  align-items: center;
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.item {
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-weight: bold;
+  color: var(--textSoft);
+}
+
+.subtitle {
+  font-weight: 200;
+  font-style: 10px;
+}
+
+.button {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: max-content;
+}
