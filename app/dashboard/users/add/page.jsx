@@ -1,4 +1,4 @@
-import { addUser } from "@/app/utils/actions";
+import { addUser } from "@/app/utils/add-delete-actions";
 import styles from "./addUser.module.css";
 import Image from "next/image";
 
@@ -28,16 +28,16 @@ const AddUserPage = () => {
             <input type="text" placeholder="Username" name="username" />
             <select name="role">
               <option value="default">Select Role</option>
-              <option value="kitche">Admin</option>
-              <option value="office">Editor</option>
-              <option value="phones">Client</option>
-              <option value="computers">Guest</option>
+              <option value="admin">Admin</option>
+              <option value="editor">Editor</option>
+              <option value="client">Client</option>
+              <option value="guest">Guest</option>
             </select>
             <select name="status">
               <option value="default">Select Status</option>
-              <option value="kitche">Active</option>
-              <option value="office">Pending</option>
-              <option value="phones">Blocked</option>
+              <option value="active">Active</option>
+              <option value="pending">Pending</option>
+              <option value="blocked">Blocked</option>
             </select>
           </div>
           <div className={styles.secondaryData}>

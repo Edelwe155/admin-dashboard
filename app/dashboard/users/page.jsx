@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "@/app/utils/data";
-import { deleteUser } from "@/app/utils/actions";
+import { deleteUser } from "@/app/utils/add-delete-actions";
 
 const UsersPage = async ({ searchParams }) => {
   const query = searchParams?.q || "";

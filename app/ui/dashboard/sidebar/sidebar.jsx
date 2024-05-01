@@ -1,9 +1,6 @@
-"use client";
-
-import React from "react";
-import styles from "./sidebar.module.css";
-import Link from "next/link";
 import Image from "next/image";
+import MenuLink from "./menuLink/menuLink";
+import styles from "./sidebar.module.css";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
@@ -12,16 +9,16 @@ import {
   MdWork,
   MdAnalytics,
   MdPeople,
-  MdHelpCenter,
   MdOutlineSettings,
+  MdHelpCenter,
   MdLogout,
 } from "react-icons/md";
-import { usePathname } from "next/navigation";
+import { auth, signOut } from "@/app/auth-credentials";
 
 const menuItems = [
   {
     title: "Pages",
-    links: [
+    list: [
       {
         title: "Dashboard",
         path: "/dashboard",
@@ -45,8 +42,8 @@ const menuItems = [
     ],
   },
   {
-    title: "Analytcis",
-    links: [
+    title: "Analytics",
+    list: [
       {
         title: "Revenue",
         path: "/dashboard/revenue",
@@ -66,7 +63,7 @@ const menuItems = [
   },
   {
     title: "User",
-    links: [
+    list: [
       {
         title: "Settings",
         path: "/dashboard/settings",
@@ -81,47 +78,45 @@ const menuItems = [
   },
 ];
 
-const Sidebar = () => {
-  const pathName = usePathname();
+const Sidebar = async () => {
+  const { user } = await auth();
 
   return (
     <div className={styles.container}>
       <div className={styles.user}>
         <Image
           className={styles.userImage}
-          src="/noavatar.png"
-          alt="user avatar"
-          width={50}
-          height={50}
+          src={"/noavatar.png"}
+          alt=""
+          width="50"
+          height="50"
         />
         <div className={styles.userDetail}>
-          <span className={styles.username}> Vladyslav </span>
-          <span className={styles.userTitle}> Admin </span>
+          <span className={styles.username}>{user.username}</span>
+          <span className={styles.userTitle}>{user.role}</span>
         </div>
       </div>
       <ul className={styles.list}>
         {menuItems.map((cat) => (
           <li key={cat.title}>
-            <span className={styles.category}>{cat.title}</span>
-            {cat.links.map((item) => (
-              <Link
-                href={item.path}
-                key={item.title}
-                className={`${styles.subcategory} ${
-                  pathName === item.path && styles.active
-                }`}
-              >
-                {item.icon}
-                {item.title}
-              </Link>
+            <span className={styles.cat}>{cat.title}</span>
+            {cat.list.map((item) => (
+              <MenuLink item={item} key={item.title} />
             ))}
           </li>
         ))}
       </ul>
-      <button className={styles.logout}>
-        <MdLogout />
-        Logout
-      </button>
+      <form
+        action={async () => {
+          "use server";
+          await signOut();
+        }}
+      >
+        <button className={styles.logout}>
+          <MdLogout />
+          Logout
+        </button>
+      </form>
     </div>
   );
 };

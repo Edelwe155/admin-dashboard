@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchProducts } from "@/app/utils/data";
-import { deleteProduct } from "@/app/utils/actions";
+import { deleteProduct } from "@/app/utils/add-delete-actions";
 
 const ProductsPage = async ({ searchParams }) => {
   const query = searchParams?.q || "";

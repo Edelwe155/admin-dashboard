@@ -1,7 +1,7 @@
 import { fetchSingleProduct } from "@/app/utils/data";
 import styles from "./productInfo.module.css";
 import Image from "next/image";
-import { updateProduct } from "@/app/utils/actions";
+import { updateProduct } from "@/app/utils/add-delete-actions";
 
 const ProductPage = async ({ params }) => {
   const { id } = params;

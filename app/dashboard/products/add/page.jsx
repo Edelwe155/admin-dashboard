@@ -1,4 +1,4 @@
-import { addProduct } from "@/app/utils/actions";
+import { addProduct } from "@/app/utils/add-delete-actions";
 import styles from "./addProduct.module.css";
 import Image from "next/image";
 

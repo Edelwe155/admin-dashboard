@@ -1,7 +1,7 @@
 import { fetchSingleUser } from "@/app/utils/data";
 import styles from "./userInfo.module.css";
 import Image from "next/image";
-import { updateUser } from "@/app/utils/actions";
+import { updateUser } from "@/app/utils/add-delete-actions";
 
 const UserPage = async ({ params }) => {
   const { id } = params;
