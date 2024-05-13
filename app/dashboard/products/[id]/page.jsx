@@ -2,6 +2,7 @@ import { fetchSingleProduct } from "@/app/utils/data";
 import styles from "./productInfo.module.css";
 import Image from "next/image";
 import { updateProduct } from "@/app/utils/add-delete-actions";
+import { NamedTextInput } from "@/app/ui/inputs/namedTextInput/namedTextInput";
 
 const ProductPage = async ({ params }) => {
   const { id } = params;
@@ -25,8 +26,9 @@ const ProductPage = async ({ params }) => {
                 <span>{product.title}</span>
                 <span>Stock: {product.stock}</span>
                 <span>Price: ${product.price}</span>
-                <span>Category: {product.category}</span>
+                <span>Color: {product.color}</span>
                 <span>Dimensions: {product.size}</span>
+                <span>Category: {product.category}</span>
               </div>
             </div>
           </div>
@@ -38,11 +40,11 @@ const ProductPage = async ({ params }) => {
               className={styles.imageInput}
               name="image"
             />
-            <input type="text" placeholder="Set new title" name="title" />
-            <input type="text" placeholder="Set new stock" name="stock" />
-            <input type="text" placeholder="Set new price" name="price" />
-            <input type="text" placeholder="Set new color" name="color" />
-            <input type="text" placeholder="Set new size" name="size" />
+            <NamedTextInput name="title" />
+            <NamedTextInput name="stock" />
+            <NamedTextInput name="price" />
+            <NamedTextInput name="color" />
+            <NamedTextInput name="size" />
             <select name="category" defaultValue={product.category}>
               <option value="default">Select category</option>
               <option value="kitchen">Kitchen</option>

@@ -1,6 +1,7 @@
 import { addProduct } from "@/app/utils/add-delete-actions";
 import styles from "./addProduct.module.css";
 import Image from "next/image";
+import { NamedTextInput } from "@/app/ui/inputs/namedTextInput/namedTextInput";
 
 const AddProductPage = () => {
   return (
@@ -25,7 +26,7 @@ const AddProductPage = () => {
               />
             </div>
 
-            <input type="text" placeholder="title" name="title" />
+            <NamedTextInput name="title" />
             <select name="category" id="category">
               <option value="default">Select category</option>
               <option value="kitche">Kitchen</option>
@@ -36,12 +37,12 @@ const AddProductPage = () => {
           </div>
           <div className={styles.secondaryData}>
             <div className={styles.inputRow}>
-              <input type="number" placeholder="price" name="price" />
-              <input type="number" placeholder="stock" name="stock" />
+              <NamedTextInput name="price" type="number" />
+              <NamedTextInput name="stock" type="number" />
             </div>
             <div className={styles.inputRow}>
-              <input type="text" placeholder="color" name="color" />
-              <input type="text" placeholder="size" name="size" />
+              <NamedTextInput name="color" />
+              <NamedTextInput name="size" />
             </div>
             <textarea
               name="about"

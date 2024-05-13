@@ -21,10 +21,6 @@
   gap: 10px;
 }
 
-.form {
-  display: flex;
-}
-
 .general {
   display: flex;
   flex-direction: column;
@@ -36,9 +32,10 @@
   margin-left: 20px;
 }
 
-.form input,
-.form textarea,
-.form select {
+.general input,
+.general textarea,
+.general select,
+.innerContainer textarea {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -49,9 +46,9 @@
   border-radius: 10px;
 }
 
-/* .form input:disabled,
-.form textarea:disabled,
-.form select:disabled {
+/* .upper input:disabled,
+.upper textarea:disabled,
+.upper select:disabled {
   cursor: not-allowed;
 } */
 

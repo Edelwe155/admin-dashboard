@@ -10,6 +10,10 @@
   background-color: var(--bgSoft);
 }
 
+.innerContainer label {
+  min-width: 25%;
+}
+
 .productInfo {
   display: flex;
   gap: 20px;
@@ -42,7 +46,7 @@
   gap: 20px;
 }
 
-.form input,
+.imageInput,
 .form textarea,
 .form select {
   width: 100%;

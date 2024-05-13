@@ -1,6 +1,7 @@
 import { addUser } from "@/app/utils/add-delete-actions";
 import styles from "./addUser.module.css";
 import Image from "next/image";
+import { NamedTextInput } from "@/app/ui/inputs/namedTextInput/namedTextInput";
 
 const AddUserPage = () => {
   return (
@@ -24,8 +25,8 @@ const AddUserPage = () => {
                 name="image"
               />
             </div>
-
-            <input type="text" placeholder="Username" name="username" />
+            
+            <NamedTextInput name="username" />
             <select name="role">
               <option value="default">Select Role</option>
               <option value="admin">Admin</option>
@@ -41,11 +42,11 @@ const AddUserPage = () => {
             </select>
           </div>
           <div className={styles.secondaryData}>
-            <input type="text" placeholder="name" name="name" />
-            <input type="text" placeholder="email" name="email" />
-            <input type="text" placeholder="password" name="password" />
-            <input type="text" placeholder="phone number" name="phone" />
-            <input type="text" placeholder="address" name="address" />
+            <NamedTextInput name="name" />
+            <NamedTextInput name="email" />
+            <NamedTextInput name="password" />
+            <NamedTextInput name="phone" />
+            <NamedTextInput name="address" />
             <textarea
               name="about"
               id="about"
